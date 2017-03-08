@@ -1,23 +1,20 @@
-Zabbix 3.0 Dell Equallogic
+Zabbix 3.2 Dell Equallogic
 ==========================
 
-This template (ZBX3-DELL-EQUALLOGIC) use the Equallogic-MIB to discover and manage Equallogic Storage Array in Zabbix 3.0.
+This template (ZBX3-DELL-EQUALLOGIC) uses the Equallogic-MIB to discover and manage Equallogic Storage Arrays in Zabbix 3.2.
 
 This Zabbix template provides a check of Dell Equallogic systems.
-The template assumes 24 disks are present in the system and has been tested on a several PS6110 systems: PS6110XS, P6110XV and PS6110E.
+The template assumes 24 disks are present in the system and has been tested on a several PS6110 systems: PS6110XS, P6110XV and PS6110E and on the PS-M4110.
 
 ## Contents
 
 * zbx3-dell-equallogic.xml - Zabbix template
-* discover_eqlvolumes.pl - Perl helper script to generate a list of SNMP sub-ids, one for each volume.
 
 ## Installation
 
 Import the XML file into Zabbix (Under Configuration -> Templates).
 
 The SNMP Community string for the template can be set in the template configuration itself, under Macros. By default this is set to: "public".
-
-Copy the Perl helper script to the ExternalScripts directory (see /etc/zabbix/zabbix_server.conf) and make sure it is executable by running: chmod a+rx /path/to/discover_eqlvolumes.pl
 
 Run the following command on the console:
 
@@ -33,7 +30,7 @@ snmpwalk -v2c -c public 123.456.798.1 .1.3.6.1.4.1.12740.2.1.1.1.9.1
 
 ```
 
-You will get something like that:
+You will get something like this:
 
 ```
 SNMPv2-SMI::enterprises.12740.2.1.1.1.9.1.1234567890 = STRING: "Foo"
@@ -50,6 +47,7 @@ Now create a macro on the Host
 We need that because zabbix has no nested LLD at the moment, please vote for it https://support.zabbix.com/browse/ZBXNEXT-1527
 
 ## Value Mappings
+As of Zabbix 3.0 these are imported with the XML template. With earlier versions of Zabbix you need to create these manually in the servers administration.
 
 ```
 eqlControllerBatteryStatus:

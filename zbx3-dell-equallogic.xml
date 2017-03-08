@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.0</version>
-    <date>2016-08-02T09:45:39Z</date>
+    <version>3.2</version>
+    <date>2017-03-08T14:26:48Z</date>
     <groups>
         <group>
             <name>Template Dell</name>
@@ -438,243 +438,6 @@
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>SAN volumes</name>
-                    <type>10</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>discover_eqlvolumes.pl[&quot;{HOST.CONN}&quot;,&quot;{$SNMP_COMMUNITY}&quot;]</key>
-                    <delay>3600</delay>
-                    <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <filter>
-                        <evaltype>0</evaltype>
-                        <formula/>
-                        <conditions/>
-                    </filter>
-                    <lifetime>30</lifetime>
-                    <description/>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>{#SNMPVALUE} Volume Admin Status</name>
-                            <type>4</type>
-                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                            <multiplier>0</multiplier>
-                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.1.1.9.{#SNMPINDEX}</snmp_oid>
-                            <key>eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>365</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Volume</name>
-                                </application>
-                            </applications>
-                            <valuemap>
-                                <name>eqliscsiVolumeAdminStatus</name>
-                            </valuemap>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>{#SNMPVALUE} Volume Size</name>
-                            <type>4</type>
-                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                            <multiplier>1</multiplier>
-                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.1.1.8.{#SNMPINDEX}</snmp_oid>
-                            <key>eqliscsiVolumeSize.[&quot;{#SNMPINDEX}&quot;]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>365</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units>B</units>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1000000</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Volume</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>{#SNMPVALUE} Volume Allocated Space</name>
-                            <type>4</type>
-                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                            <multiplier>1</multiplier>
-                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.7.1.13.{#SNMPINDEX}</snmp_oid>
-                            <key>eqliscsiVolumeStatusAllocatedSpace.[&quot;{#SNMPINDEX}&quot;]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>365</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units>B</units>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1000000</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Volume</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>{#SNMPVALUE} Volume percent used</name>
-                            <type>15</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>volumepercentused.[&quot;{#SNMPINDEX}&quot;]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>365</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units>%</units>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params>100*last(&quot;eqliscsiVolumeStatusAllocatedSpace.[\&quot;{#SNMPINDEX}\&quot;]&quot;)/last(&quot;eqliscsiVolumeSize.[\&quot;{#SNMPINDEX}\&quot;]&quot;)</params>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Volume</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
-                    </item_prototypes>
-                    <trigger_prototypes>
-                        <trigger_prototype>
-                            <expression>{Template Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;1 and {Template Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;2 and {Template Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;4</expression>
-                            <name>{#SNMPVALUE} Volume Admin Status</name>
-                            <url/>
-                            <status>0</status>
-                            <priority>2</priority>
-                            <description/>
-                            <type>0</type>
-                            <dependencies/>
-                        </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{Template Dell Equallogic:volumepercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;99</expression>
-                            <name>{#SNMPVALUE} Volume {ITEM.LASTVALUE} Used</name>
-                            <url/>
-                            <status>0</status>
-                            <priority>1</priority>
-                            <description>More than 90% of a volume is in use</description>
-                            <type>0</type>
-                            <dependencies/>
-                        </trigger_prototype>
-                    </trigger_prototypes>
-                    <graph_prototypes/>
-                    <host_prototypes/>
-                </discovery_rule>
-                <discovery_rule>
                     <name>Controller Battery status</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
@@ -757,13 +520,19 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template Dell Equallogic:eqlControllerBatteryStatus.[{#SNMPINDEX}].last()}&lt;&gt;1</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
                             <name>Battery Controller Status</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
+                            <manual_close>0</manual_close>
                             <dependencies/>
+                            <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
@@ -896,13 +665,19 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template Dell Equallogic:eqlMemberHealthDetailsFanCurrentState.[{#SNMPVALUE}].last()}&lt;&gt;1</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
                             <name>Fan Failure</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
+                            <manual_close>0</manual_close>
                             <dependencies/>
+                            <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
@@ -1119,23 +894,35 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template Dell Equallogic:eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}].min(#3)}&gt;80</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
                             <name>High Temperature in {#SNMPVALUE}</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
+                            <manual_close>0</manual_close>
                             <dependencies/>
+                            <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Template Dell Equallogic:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;1 and {Template Dell Equallogic:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;0</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
                             <name>{#SNMPVALUE} Temperature Status</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
+                            <manual_close>0</manual_close>
                             <dependencies/>
+                            <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
@@ -1400,13 +1187,19 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template Dell Equallogic:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;1 and {Template Dell Equallogic:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;2</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
                             <name>{#SNMPVALUE} Disk 1 Status</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
+                            <manual_close>0</manual_close>
                             <dependencies/>
+                            <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
@@ -1584,19 +1377,804 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template Dell Equallogic:poolpercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;98</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
                             <name>{#SNMPVALUE} Pool {ITEM.LASTVALUE} Used</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
+                            <manual_close>0</manual_close>
                             <dependencies/>
+                            <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
                     <host_prototypes/>
                 </discovery_rule>
+                <discovery_rule>
+                    <name>SAN volumes</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.12740.5.1.7.1.1.4.{$EQL_ID}]</snmp_oid>
+                    <key>snmp.discovery.sanvolumes</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>30</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Admin Status</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.1.1.9.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>eqliscsiVolumeAdminStatus</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Size</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>1</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.1.1.8.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeSize.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>B</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1000000</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume iSCSI Sessions</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.34.1.5.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeStatsNoOfSessions.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>2</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>No of sessions that were established and closed so far to this volume.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Total Read Latency</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.34.1.6.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeStatsReadLatency.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>ms</units>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The accumulative latency in milliseconds for read operations on this volume.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Read IOPS</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.34.1.8.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeStatsReadOpCount.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>IOps</units>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The number of read operations on this volume per second.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Bps received</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.34.1.4.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeStatsRxData.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>Bps</units>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The data octets per second that were received by the local iSCSI node.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Bps transmitted</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.34.1.3.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeStatsTxData.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>Bps</units>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The data octets per second that were transmitted by the local iSCSI node.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Total Write Latency</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.34.1.7.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeStatsWriteLatency.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>ms</units>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The accumulative latency in milliseconds for write operations on this volume.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Write IOPS</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.34.1.9.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeStatsWriteOpCount.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>IOps</units>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The number of write operations on this volume per second.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Allocated Space</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>1</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.12740.5.1.7.7.1.13.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqliscsiVolumeStatusAllocatedSpace.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>B</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1000000</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume percent used</name>
+                            <type>15</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>volumepercentused.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>%</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>100*last(&quot;eqliscsiVolumeStatusAllocatedSpace.[\&quot;{#SNMPINDEX}\&quot;]&quot;)/last(&quot;eqliscsiVolumeSize.[\&quot;{#SNMPINDEX}\&quot;]&quot;)</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Average Read Latency</name>
+                            <type>15</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>volumeReadAvgLatency.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>ms</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>last(&quot;eqliscsiVolumeStatsReadLatency.[\&quot;{#SNMPINDEX}\&quot;]&quot;)/last(&quot;eqliscsiVolumeStatsReadOpCount.[\&quot;{#SNMPINDEX}\&quot;]&quot;)</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The average latency in milli seconds for read operations on this volume.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#SNMPVALUE} Volume Average Write Latency</name>
+                            <type>15</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>volumeWriteAvgLatency.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>ms</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>last(&quot;eqliscsiVolumeStatsWriteLatency.[\&quot;{#SNMPINDEX}\&quot;]&quot;)/last(&quot;eqliscsiVolumeStatsWriteOpCount.[\&quot;{#SNMPINDEX}\&quot;]&quot;)</params>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>The average latency in milli seconds for write operations on this volume.</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Volume</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;1 and {Template Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;2 and {Template Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;4</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{#SNMPVALUE} Volume Admin Status</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template Dell Equallogic:volumepercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;99</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{#SNMPVALUE} Volume {ITEM.LASTVALUE} Used</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>1</priority>
+                            <description>More than 90% of a volume is in use</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>{#SNMPVALUE} Volume Bps</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template Dell Equallogic</host>
+                                        <key>eqliscsiVolumeStatsTxData.[&quot;{#SNMPINDEX}&quot;]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>F63100</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template Dell Equallogic</host>
+                                        <key>eqliscsiVolumeStatsRxData.[&quot;{#SNMPINDEX}&quot;]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>{#SNMPVALUE} Volume IOPS</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template Dell Equallogic</host>
+                                        <key>eqliscsiVolumeStatsReadOpCount.[&quot;{#SNMPINDEX}&quot;]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>F63100</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template Dell Equallogic</host>
+                                        <key>eqliscsiVolumeStatsWriteOpCount.[&quot;{#SNMPINDEX}&quot;]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>{#SNMPVALUE} Volume Latency</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template Dell Equallogic</host>
+                                        <key>volumeReadAvgLatency.[&quot;{#SNMPINDEX}&quot;]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>F63100</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template Dell Equallogic</host>
+                                        <key>volumeWriteAvgLatency.[&quot;{#SNMPINDEX}&quot;]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <host_prototypes/>
+                </discovery_rule>
             </discovery_rules>
+            <httptests/>
             <macros>
                 <macro>
                     <macro>{$EQL_ID}</macro>
@@ -1614,43 +2192,67 @@
     <triggers>
         <trigger>
             <expression>{Template Dell Equallogic:eqlMemberHealthStatus.max(#2)}&lt;&gt;1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>Health Status</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
         <trigger>
             <expression>{Template Dell Equallogic:MemberUsedStoragePercent.min(#2)}&gt;95</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>low free Storage (&gt;95%)</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
         <trigger>
             <expression>{Template Dell Equallogic:eqlMemberHealthStatus.nodata(600)}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>no SNMP-Data recieved since &gt;10m</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>3</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
         <trigger>
             <expression>{Template Dell Equallogic:eqlMemberRaidStatus.last()}&lt;&gt;1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
             <name>Raid Status</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
+            <manual_close>0</manual_close>
             <dependencies/>
+            <tags/>
         </trigger>
     </triggers>
     <graphs>
