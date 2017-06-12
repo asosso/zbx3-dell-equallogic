@@ -4,13 +4,24 @@ Zabbix 3.2 Dell Equallogic
 This template (ZBX3-DELL-EQUALLOGIC) uses the Equallogic-MIB to discover and manage Equallogic Storage Arrays in Zabbix 3.2.
 
 This Zabbix template provides a check of Dell Equallogic systems.
-The template assumes 24 disks are present in the system and has been tested on a several PS6110 systems: PS6110XS, P6110XV and PS6110E and on the PS-M4110.
+The template has been tested on a several systems: 
 
-## Contents
+* PS4100
+* PS6510
+* PS5500
+* PS6500
+* PS-M4110
+* PS6110XS
+* P6110XV
+* PS6110E
+
+Contents
+--------
 
 * zbx3-dell-equallogic.xml - Zabbix template
 
-## Installation
+Installation
+------------
 
 Import the XML file into Zabbix (Under Configuration -> Templates).
 
@@ -42,15 +53,19 @@ Now create a macro on the Host
 ```
 {$EQL_ID} -> 1234567890
 {$EQL_NAME} -> foo
+{$SNMP_COMMUNITY} -> public
 ```
 
 We need that because zabbix has no nested LLD at the moment, please vote for it https://support.zabbix.com/browse/ZBXNEXT-1527
 
-## Value Mappings
-As of Zabbix 3.0 these are imported with the XML template. With earlier versions of Zabbix you need to create these manually in the servers administration.
+Value Mappings
+--------------
+
+Starting from Zabbix 3.0 these are imported with the XML template. With earlier versions of Zabbix you need to create these manually in the servers administration.
 
 ```
 eqlControllerBatteryStatus:
+
 1=>ok
 2=>failed
 3=>good-battery-is-charging
@@ -59,6 +74,7 @@ eqlControllerBatteryStatus:
 6=>missing-battery
 
 eqlDiskStatus:
+
 1=>on-line
 2=>spare
 3=>failed
@@ -74,6 +90,7 @@ eqlDiskStatus:
 13=>preempt-failed
 
 eqliscsiVolumeAdminStatus:
+
 1=>online
 2=>offline
 3=>online-lost-cached-blocks
@@ -81,29 +98,34 @@ eqliscsiVolumeAdminStatus:
 5=>offline-control
 
 eqlMemberHealthDetailsFanCurrentState:
+
 0=>unknown
 1=>normal
 2=>warning
 3=>critical
 
 eqlMemberHealthDetailsPowerSupplyCurrentState:
+
 1=>on-and-operating
 2=>no-ac-power
 3=>failed-or-no-data
 
 eqlMemberHealthDetailsTemperatureCurrentState:
+
 0=>unknown
 1=>normal
 2=>warning
 3=>critical
 
 eqlMemberHealthStatus:
+
 0=>Unknown
 1=>Normal
 2=>Warning
 3=>Critical
 
 eqlMemberRaidStatus:
+
 1=>ok
 2=>degraded
 3=>verifying
@@ -114,18 +136,23 @@ eqlMemberRaidStatus:
 8=>mirroring
 ```
 
-## Authors
+Authors
+-------
 
 * [The original template](https://www.zabbix.org/wiki/Monitoring_Dell_Equallogic_Systems#Version_1) was created by Ivo van Geel for Radboudumc in Nijmegen.
 * [Version 2](https://www.zabbix.org/wiki/Monitoring_Dell_Equallogic_Systems#Version_2) was created by Stefan Krüger.
 * [Version 3](https://github.com/asosso/zbx3-dell-equallogic) was created by Andrea Sosso @asosso
+* Version 3.2 was extended by Simon @elrido with the volume discovery 
 
-## License
+
+License
+-------
 
 The template and the helper script are released under the GNU GPLv3 license. See gpl.txt for more information on the GNU GPLv3 license.
 You must include this file when distributing this Zabbix template.
 
-### Contribute
+Contribute
+----------
 
 Contributions are welcome.
 
