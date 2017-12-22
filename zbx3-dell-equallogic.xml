@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2017-12-22T11:35:43Z</date>
+    <date>2017-12-22T12:55:47Z</date>
     <groups>
         <group>
             <name>Template Dell</name>
@@ -12,8 +12,8 @@
     </groups>
     <templates>
         <template>
-            <template>Custom - HW - Dell Equallogic - MainUnit</template>
-            <name>Custom - HW - Dell Equallogic - MainUnit</name>
+            <template>Custom - HW - Dell Equallogic</template>
+            <name>Custom - HW - Dell Equallogic</name>
             <description/>
             <groups>
                 <group>
@@ -25,22 +25,22 @@
             </groups>
             <applications>
                 <application>
+                    <name>Disks</name>
+                </application>
+                <application>
+                    <name>Fan</name>
+                </application>
+                <application>
                     <name>General</name>
                 </application>
                 <application>
-                    <name>Main Unit - Disks</name>
+                    <name>Pools</name>
                 </application>
                 <application>
-                    <name>Main Unit - Fan</name>
+                    <name>Temperature</name>
                 </application>
                 <application>
-                    <name>Main Unit - Pools</name>
-                </application>
-                <application>
-                    <name>Main Unit - Temperature</name>
-                </application>
-                <application>
-                    <name>Main Unit - Volume</name>
+                    <name>Volume</name>
                 </application>
             </applications>
             <items>
@@ -518,7 +518,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqlControllerBatteryStatus.[{#SNMPINDEX}].last()}&lt;&gt;1</expression>
+                            <expression>{Custom - HW - Dell Equallogic:eqlControllerBatteryStatus.[{#SNMPINDEX}].last()}&lt;&gt;1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Battery Controller Status</name>
@@ -602,7 +602,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Fan</name>
+                                    <name>Fan</name>
                                 </application>
                             </applications>
                             <valuemap>
@@ -646,7 +646,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Fan</name>
+                                    <name>Fan</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -659,7 +659,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqlMemberHealthDetailsFanCurrentState.[{#SNMPVALUE}].last()}&lt;&gt;1</expression>
+                            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthDetailsFanCurrentState.[{#SNMPVALUE}].last()}&lt;&gt;1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Fan Failure</name>
@@ -702,7 +702,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqlMemberHealthDetailsFanValue.[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
@@ -858,7 +858,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Temperature</name>
+                                    <name>Temperature</name>
                                 </application>
                             </applications>
                             <valuemap>
@@ -902,7 +902,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Temperature</name>
+                                    <name>Temperature</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -915,7 +915,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}].min(#3)}&gt;80</expression>
+                            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}].min(#3)}&gt;80</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>High Temperature in {#SNMPVALUE}</name>
@@ -931,7 +931,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;1 and {Custom - HW - Dell Equallogic - MainUnit:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;0</expression>
+                            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;1 and {Custom - HW - Dell Equallogic:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Temperature Status</name>
@@ -974,7 +974,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
@@ -1048,7 +1048,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Disks</name>
+                                    <name>Disks</name>
                                 </application>
                             </applications>
                             <valuemap>
@@ -1092,7 +1092,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Disks</name>
+                                    <name>Disks</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1139,7 +1139,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Disks</name>
+                                    <name>Disks</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1186,7 +1186,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Disks</name>
+                                    <name>Disks</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1233,7 +1233,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Disks</name>
+                                    <name>Disks</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1251,7 +1251,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;1 and {Custom - HW - Dell Equallogic - MainUnit:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;2</expression>
+                            <expression>{Custom - HW - Dell Equallogic:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;1 and {Custom - HW - Dell Equallogic:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;2</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Disk 1 Status</name>
@@ -1294,7 +1294,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqlDiskStatusBytesRead.[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -1306,7 +1306,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqlDiskStatusBytesWritten.[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -1318,7 +1318,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqlDiskStatusTotalQD.[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -1395,7 +1395,7 @@
                                     <name>General</name>
                                 </application>
                                 <application>
-                                    <name>Main Unit - Pools</name>
+                                    <name>Pools</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1442,7 +1442,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Pools</name>
+                                    <name>Pools</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1489,7 +1489,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Pools</name>
+                                    <name>Pools</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1502,7 +1502,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic - MainUnit:poolpercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;98</expression>
+                            <expression>{Custom - HW - Dell Equallogic:poolpercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;98</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Pool {ITEM.LASTVALUE} Used</name>
@@ -1545,7 +1545,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqlStoragePoolStatsSpace.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -1557,7 +1557,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqlStoragePoolStatsSpaceUsed.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -1631,7 +1631,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap>
@@ -1675,7 +1675,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1722,7 +1722,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1769,7 +1769,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1816,7 +1816,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1863,7 +1863,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1910,7 +1910,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1957,7 +1957,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -2004,7 +2004,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -2051,7 +2051,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -2098,7 +2098,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -2140,7 +2140,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -2182,7 +2182,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Main Unit - Volume</name>
+                                    <name>Volume</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -2195,7 +2195,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;1 and {Custom - HW - Dell Equallogic - MainUnit:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;2 and {Custom - HW - Dell Equallogic - MainUnit:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;4</expression>
+                            <expression>{Custom - HW - Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;1 and {Custom - HW - Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;2 and {Custom - HW - Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;4</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Volume Admin Status</name>
@@ -2211,7 +2211,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic - MainUnit:volumepercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;99</expression>
+                            <expression>{Custom - HW - Dell Equallogic:volumepercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;99</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Volume {ITEM.LASTVALUE} Used</name>
@@ -2254,7 +2254,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqliscsiVolumeStatsTxData.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2266,7 +2266,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqliscsiVolumeStatsRxData.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2298,7 +2298,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqliscsiVolumeStatsReadOpCount.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2310,7 +2310,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>eqliscsiVolumeStatsWriteOpCount.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2342,7 +2342,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>volumeReadAvgLatency.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2354,7 +2354,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                        <host>Custom - HW - Dell Equallogic</host>
                                         <key>volumeWriteAvgLatency.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2400,7 +2400,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Disk {#SNMPINDEX} Activity</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2429,7 +2429,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Fan Speed of {#SNMPVALUE}</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2458,7 +2458,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Equallogic -  Read/Write stats</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -2480,7 +2480,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Equallogic -  Storage Usage</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -2502,7 +2502,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Equallogic -  Storage Usage Overall</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -2531,7 +2531,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>{#SNMPVALUE} Pool Space</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2560,7 +2560,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>{#SNMPVALUE} Volume IOPS</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2582,7 +2582,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>{#SNMPVALUE} Volume Bps</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2604,7 +2604,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>{#SNMPVALUE} Volume Latency</name>
-                                <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                                <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2616,7 +2616,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqlMemberHealthStatus.max(#2)}&lt;&gt;1</expression>
+            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthStatus.max(#2)}&lt;&gt;1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Health Status</name>
@@ -2632,7 +2632,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Custom - HW - Dell Equallogic - MainUnit:MemberUsedStoragePercent.min(#2)}&gt;95</expression>
+            <expression>{Custom - HW - Dell Equallogic:MemberUsedStoragePercent.min(#2)}&gt;95</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>low free Storage (&gt;95%)</name>
@@ -2648,7 +2648,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqlMemberHealthStatus.nodata(600)}=1</expression>
+            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthStatus.nodata(600)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>no SNMP-Data recieved since &gt;10m</name>
@@ -2664,7 +2664,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Custom - HW - Dell Equallogic - MainUnit:eqlMemberRaidStatus.last()}&lt;&gt;1</expression>
+            <expression>{Custom - HW - Dell Equallogic:eqlMemberRaidStatus.last()}&lt;&gt;1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Raid Status</name>
@@ -2707,7 +2707,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                        <host>Custom - HW - Dell Equallogic</host>
                         <key>eqlMemberReadOpCount</key>
                     </item>
                 </graph_item>
@@ -2719,7 +2719,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                        <host>Custom - HW - Dell Equallogic</host>
                         <key>eqlMemberWriteOpCount</key>
                     </item>
                 </graph_item>
@@ -2751,7 +2751,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                        <host>Custom - HW - Dell Equallogic</host>
                         <key>eqlMemberUsedStorage</key>
                     </item>
                 </graph_item>
@@ -2763,7 +2763,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                        <host>Custom - HW - Dell Equallogic</host>
                         <key>eqlMemberReplStorage</key>
                     </item>
                 </graph_item>
@@ -2775,7 +2775,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                        <host>Custom - HW - Dell Equallogic</host>
                         <key>eqlMemberSnapStorage</key>
                     </item>
                 </graph_item>
@@ -2807,7 +2807,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Dell Equallogic - MainUnit</host>
+                        <host>Custom - HW - Dell Equallogic</host>
                         <key>MemberUsedStoragePercent</key>
                     </item>
                 </graph_item>
