@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2017-12-22T09:49:47Z</date>
+    <date>2017-12-22T10:30:53Z</date>
     <groups>
         <group>
             <name>Template Dell</name>
@@ -12,8 +12,8 @@
     </groups>
     <templates>
         <template>
-            <template>Custom - HW - Hardware Dell Equallogic</template>
-            <name>Custom - HW - Hardware Dell Equallogic</name>
+            <template>Custom - HW - Hardware Dell Equallogic - MainUnit</template>
+            <name>Custom - HW - Hardware Dell Equallogic - MainUnit</name>
             <description/>
             <groups>
                 <group>
@@ -518,7 +518,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Hardware Dell Equallogic:eqlControllerBatteryStatus.[{#SNMPINDEX}].last()}&lt;&gt;1</expression>
+                            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqlControllerBatteryStatus.[{#SNMPINDEX}].last()}&lt;&gt;1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Battery Controller Status</name>
@@ -659,7 +659,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Hardware Dell Equallogic:eqlMemberHealthDetailsFanCurrentState.[{#SNMPVALUE}].last()}&lt;&gt;1</expression>
+                            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqlMemberHealthDetailsFanCurrentState.[{#SNMPVALUE}].last()}&lt;&gt;1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Fan Failure</name>
@@ -702,7 +702,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqlMemberHealthDetailsFanValue.[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
@@ -915,7 +915,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Hardware Dell Equallogic:eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}].min(#3)}&gt;80</expression>
+                            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}].min(#3)}&gt;80</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>High Temperature in {#SNMPVALUE}</name>
@@ -931,7 +931,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Hardware Dell Equallogic:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;1 and {Custom - HW - Hardware Dell Equallogic:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;0</expression>
+                            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;1 and {Custom - HW - Hardware Dell Equallogic - MainUnit:eqlMemberHealthDetailsTemperatureCurrentState.[{#SNMPVALUE}].max(#2)}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Temperature Status</name>
@@ -974,7 +974,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
@@ -1251,7 +1251,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Hardware Dell Equallogic:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;1 and {Custom - HW - Hardware Dell Equallogic:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;2</expression>
+                            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;1 and {Custom - HW - Hardware Dell Equallogic - MainUnit:eqlDiskStatus.[{#SNMPINDEX}].last(0)}&lt;&gt;2</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Disk 1 Status</name>
@@ -1294,7 +1294,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqlDiskStatusBytesRead.[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -1306,7 +1306,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqlDiskStatusBytesWritten.[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -1318,7 +1318,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqlDiskStatusTotalQD.[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -1502,7 +1502,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Hardware Dell Equallogic:poolpercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;98</expression>
+                            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:poolpercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;98</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Pool {ITEM.LASTVALUE} Used</name>
@@ -1545,7 +1545,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqlStoragePoolStatsSpace.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -1557,7 +1557,7 @@
                                     <calc_fnc>4</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqlStoragePoolStatsSpaceUsed.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2195,7 +2195,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Hardware Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;1 and {Custom - HW - Hardware Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;2 and {Custom - HW - Hardware Dell Equallogic:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;4</expression>
+                            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;1 and {Custom - HW - Hardware Dell Equallogic - MainUnit:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;2 and {Custom - HW - Hardware Dell Equallogic - MainUnit:eqliscsiVolumeAdminStatus.[&quot;{#SNMPINDEX}&quot;].last(0)}&lt;&gt;4</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Volume Admin Status</name>
@@ -2211,7 +2211,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Hardware Dell Equallogic:volumepercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;99</expression>
+                            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:volumepercentused.[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;99</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#SNMPVALUE} Volume {ITEM.LASTVALUE} Used</name>
@@ -2254,7 +2254,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqliscsiVolumeStatsTxData.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2266,7 +2266,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqliscsiVolumeStatsRxData.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2298,7 +2298,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqliscsiVolumeStatsReadOpCount.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2310,7 +2310,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>eqliscsiVolumeStatsWriteOpCount.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2342,7 +2342,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>volumeReadAvgLatency.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2354,7 +2354,7 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                                         <key>volumeWriteAvgLatency.[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
@@ -2400,7 +2400,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Disk {#SNMPINDEX} Activity</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2429,7 +2429,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Fan Speed of {#SNMPVALUE}</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2458,7 +2458,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Equallogic -  Read/Write stats</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -2480,7 +2480,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Equallogic -  Storage Usage</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -2502,7 +2502,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Equallogic -  Storage Usage Overall</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -2531,7 +2531,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>{#SNMPVALUE} Pool Space</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2560,7 +2560,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>{#SNMPVALUE} Volume IOPS</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2582,7 +2582,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>{#SNMPVALUE} Volume Bps</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2604,7 +2604,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>{#SNMPVALUE} Volume Latency</name>
-                                <host>Custom - HW - Hardware Dell Equallogic</host>
+                                <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                             </resource>
                             <max_columns>1</max_columns>
                             <application/>
@@ -2616,7 +2616,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Custom - HW - Hardware Dell Equallogic:eqlMemberHealthStatus.max(#2)}&lt;&gt;1</expression>
+            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqlMemberHealthStatus.max(#2)}&lt;&gt;1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Health Status</name>
@@ -2632,7 +2632,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Custom - HW - Hardware Dell Equallogic:MemberUsedStoragePercent.min(#2)}&gt;95</expression>
+            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:MemberUsedStoragePercent.min(#2)}&gt;95</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>low free Storage (&gt;95%)</name>
@@ -2648,7 +2648,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Custom - HW - Hardware Dell Equallogic:eqlMemberHealthStatus.nodata(600)}=1</expression>
+            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqlMemberHealthStatus.nodata(600)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>no SNMP-Data recieved since &gt;10m</name>
@@ -2664,7 +2664,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Custom - HW - Hardware Dell Equallogic:eqlMemberRaidStatus.last()}&lt;&gt;1</expression>
+            <expression>{Custom - HW - Hardware Dell Equallogic - MainUnit:eqlMemberRaidStatus.last()}&lt;&gt;1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Raid Status</name>
@@ -2707,7 +2707,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                         <key>eqlMemberReadOpCount</key>
                     </item>
                 </graph_item>
@@ -2719,7 +2719,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                         <key>eqlMemberWriteOpCount</key>
                     </item>
                 </graph_item>
@@ -2751,7 +2751,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                         <key>eqlMemberUsedStorage</key>
                     </item>
                 </graph_item>
@@ -2763,7 +2763,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                         <key>eqlMemberReplStorage</key>
                     </item>
                 </graph_item>
@@ -2775,7 +2775,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                         <key>eqlMemberSnapStorage</key>
                     </item>
                 </graph_item>
@@ -2807,7 +2807,7 @@
                     <calc_fnc>4</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Custom - HW - Hardware Dell Equallogic</host>
+                        <host>Custom - HW - Hardware Dell Equallogic - MainUnit</host>
                         <key>MemberUsedStoragePercent</key>
                     </item>
                 </graph_item>

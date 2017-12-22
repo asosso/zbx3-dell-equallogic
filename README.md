@@ -45,7 +45,8 @@ You will get something like this:
 
 ```
 SNMPv2-SMI::enterprises.12740.2.1.1.1.9.1.1234567890 = STRING: "Foo"
-
+                                          ----------            -----------
+                                          {$EQL_ID}             {$EQL_NAME}
 ```
 
 Now create a macro on the Host
