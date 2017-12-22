@@ -1,4 +1,4 @@
-Zabbix 3.2 Dell Equallogic
+Zabbix 3.4 Dell Equallogic
 ==========================
 
 This template (ZBX3-DELL-EQUALLOGIC) uses the Equallogic-MIB to discover and manage Equallogic Storage Arrays in Zabbix 3.2.
