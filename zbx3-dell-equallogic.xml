@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2017-12-22T12:55:47Z</date>
+    <date>2017-12-23T09:42:52Z</date>
     <groups>
         <group>
             <name>Template Dell</name>
@@ -14,7 +14,7 @@
         <template>
             <template>Custom - HW - Dell Equallogic</template>
             <name>Custom - HW - Dell Equallogic</name>
-            <description/>
+            <description>http://www.mibdepot.com/cgi-bin/getmib3.cgi?win=mib_a&amp;r=equallogic&amp;f=eqlmember.mib&amp;v=v2&amp;t=tree</description>
             <groups>
                 <group>
                     <name>Template Dell</name>
@@ -440,12 +440,12 @@
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>Main Controller Battery status</name>
+                    <name>Controller Battery status</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.12740.4.1.1.1.5.1.{$EQL_ID}]</snmp_oid>
                     <key>eqlControllerBatteryStatus</key>
-                    <delay>600</delay>
+                    <delay>1200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -539,12 +539,12 @@
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Main Fan sensors</name>
+                    <name>Fan sensors</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.12740.2.1.7.1.2.1.{$EQL_ID}]</snmp_oid>
                     <key>eqlMemberHealthDetailsFanName</key>
-                    <delay>600</delay>
+                    <delay>1200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -713,12 +713,12 @@
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Main Power Supply</name>
+                    <name>Power Supply</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.12740.2.1.8.1.2.1.{$EQL_ID}]</snmp_oid>
                     <key>eqlMemberHealthDetailsPowerSupply</key>
-                    <delay>600</delay>
+                    <delay>1200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -795,12 +795,12 @@
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Main Temperature sensors</name>
+                    <name>Temperature sensors</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.12740.2.1.6.1.2.1.{$EQL_ID}]</snmp_oid>
                     <key>eqlMemberHealthDetailsTemperatureName</key>
-                    <delay>600</delay>
+                    <delay>1200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -871,6 +871,48 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
+                            <name>Temperature of {#SNMPVALUE} Critical Threshhold</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <snmp_oid>1.3.6.1.4.1.12740.2.1.6.1.5.1.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
+                            <key>eqlMemberHealthDetailsTemperatureHighCriticalThreshold.[{#SNMPVALUE}]</key>
+                            <delay>1200</delay>
+                            <history>2d</history>
+                            <trends>365d</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>C</units>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Temperature</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                        <item_prototype>
                             <name>Temperature of {#SNMPVALUE}</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
@@ -915,7 +957,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}].min(#3)}&gt;80</expression>
+                            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthDetailsTemperatureValue.[{#SNMPVALUE}].min(#3)}&gt;	{Custom - HW - Dell Equallogic:eqlMemberHealthDetailsTemperatureHighCriticalThreshold.[{#SNMPVALUE}].last()}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>High Temperature in {#SNMPVALUE}</name>
@@ -985,12 +1027,12 @@
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Main Disk stats</name>
+                    <name>Disk stats</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.4.1.12740.3.1.1.1.10.1.{$EQL_ID}]</snmp_oid>
                     <key>snmp.discovery.sanmembers</key>
-                    <delay>600</delay>
+                    <delay>1200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -1329,12 +1371,12 @@
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Main SAN pools</name>
+                    <name>SAN pools</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.12740.16.1.1.1.3.1]</snmp_oid>
                     <key>snmp.discovery.sanpools</key>
-                    <delay>600</delay>
+                    <delay>1200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -1568,12 +1610,12 @@
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Main SAN volumes</name>
+                    <name>SAN volumes</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.12740.5.1.7.1.1.4.{$EQL_ID}]</snmp_oid>
                     <key>snmp.discovery.sanvolumes</key>
-                    <delay>600</delay>
+                    <delay>1200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -2408,38 +2450,9 @@
                     </screen_items>
                 </screen>
                 <screen>
-                    <name>Custom - HW - Hardware Dell Equallogic - Fan sensors</name>
-                    <hsize>1</hsize>
-                    <vsize>1</vsize>
-                    <screen_items>
-                        <screen_item>
-                            <resourcetype>20</resourcetype>
-                            <width>900</width>
-                            <height>300</height>
-                            <x>0</x>
-                            <y>0</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Fan Speed of {#SNMPVALUE}</name>
-                                <host>Custom - HW - Dell Equallogic</host>
-                            </resource>
-                            <max_columns>1</max_columns>
-                            <application/>
-                        </screen_item>
-                    </screen_items>
-                </screen>
-                <screen>
                     <name>Custom - HW - Hardware Dell Equallogic  - Global</name>
                     <hsize>1</hsize>
-                    <vsize>4</vsize>
+                    <vsize>3</vsize>
                     <screen_items>
                         <screen_item>
                             <resourcetype>0</resourcetype>
@@ -2611,15 +2624,66 @@
                         </screen_item>
                     </screen_items>
                 </screen>
+                <screen>
+                    <name>Custom - HW - Hardware Dell Equallogic - Temperature</name>
+                    <hsize>1</hsize>
+                    <vsize>2</vsize>
+                    <screen_items>
+                        <screen_item>
+                            <resourcetype>20</resourcetype>
+                            <width>600</width>
+                            <height>300</height>
+                            <x>0</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Temperature of {#SNMPVALUE}</name>
+                                <host>Custom - HW - Dell Equallogic</host>
+                            </resource>
+                            <max_columns>2</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>20</resourcetype>
+                            <width>600</width>
+                            <height>300</height>
+                            <x>0</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Fan Speed of {#SNMPVALUE}</name>
+                                <host>Custom - HW - Dell Equallogic</host>
+                            </resource>
+                            <max_columns>2</max_columns>
+                            <application/>
+                        </screen_item>
+                    </screen_items>
+                </screen>
             </screens>
         </template>
     </templates>
     <triggers>
         <trigger>
-            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthStatus.max(#2)}&lt;&gt;1</expression>
+            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthStatus.max(#2)}&gt;2</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>Health Status</name>
+            <name>Health Status Critical</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -2632,10 +2696,32 @@
             <tags/>
         </trigger>
         <trigger>
+            <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthStatus.max(#2)}&gt;1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Health Status Warning</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies>
+                <dependency>
+                    <name>Health Status Critical</name>
+                    <expression>{Custom - HW - Dell Equallogic:eqlMemberHealthStatus.max(#2)}&gt;2</expression>
+                    <recovery_expression/>
+                </dependency>
+            </dependencies>
+            <tags/>
+        </trigger>
+        <trigger>
             <expression>{Custom - HW - Dell Equallogic:MemberUsedStoragePercent.min(#2)}&gt;95</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>low free Storage (&gt;95%)</name>
+            <name>Low Free Storage (usage &gt;95%)</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -2667,13 +2753,19 @@
             <expression>{Custom - HW - Dell Equallogic:eqlMemberRaidStatus.last()}&lt;&gt;1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>Raid Status</name>
+            <name>Raid Status - {ITEM.VALUE1}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
-            <description/>
+            <description>ok 	(1),	 &#13;
+degraded 	(2),	 &#13;
+verifying 	(3),	 &#13;
+reconstructing 	(4),	 &#13;
+failed 	(5),	 &#13;
+catastrophicLoss 	(6),	 &#13;
+expanding 	(7)</description>
             <type>0</type>
             <manual_close>0</manual_close>
             <dependencies/>
