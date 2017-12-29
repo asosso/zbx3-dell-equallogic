@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2017-12-23T09:42:52Z</date>
+    <date>2017-12-29T06:00:36Z</date>
     <groups>
         <group>
             <name>Template Dell</name>
@@ -131,7 +131,48 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>Bps read</name>
+                    <name>Latency Read OP</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>1.3.6.1.4.1.12740.2.1.12.1.4.{$EQL_ID}</snmp_oid>
+                    <key>eqlMemberReadAvgLatency</key>
+                    <delay>120</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>ms</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>&quot;The average latency for write operations on this member in milli seconds. The value is reset to zero upon reboot.&quot;</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OPs read</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>1.3.6.1.4.1.12740.2.1.12.1.6.1.{$EQL_ID}</snmp_oid>
@@ -142,7 +183,7 @@
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units>B</units>
+                    <units>ops</units>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -214,6 +255,56 @@
                     <valuemap/>
                     <logtimefmt/>
                     <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>Data RX</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>1.3.6.1.4.1.12740.2.1.12.1.9.{$EQL_ID}</snmp_oid>
+                    <key>eqlMemberRxData</key>
+                    <delay>120</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>b/sec</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>10</type>
+                            <params/>
+                        </step>
+                        <step>
+                            <type>1</type>
+                            <params>8</params>
+                        </step>
+                    </preprocessing>
                     <jmx_endpoint/>
                     <master_item/>
                 </item>
@@ -305,6 +396,56 @@
                     <master_item/>
                 </item>
                 <item>
+                    <name>Data TX</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>1.3.6.1.4.1.12740.2.1.12.1.8.{$EQL_ID}</snmp_oid>
+                    <key>eqlMemberTxData</key>
+                    <delay>120</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>b/sec</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>10</type>
+                            <params/>
+                        </step>
+                        <step>
+                            <type>1</type>
+                            <params>8</params>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
                     <name>Used Storage</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
@@ -351,7 +492,48 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>Bps written</name>
+                    <name>Latency Write OP</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>1.3.6.1.4.1.12740.2.1.12.1.5.{$EQL_ID}</snmp_oid>
+                    <key>eqlMemberWriteAvgLatency</key>
+                    <delay>120</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>ms</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>&quot;The average latency for read operations on this member in milli seconds. The value is reset to zero upon reboot.&quot;</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OPs write</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>1.3.6.1.4.1.12740.2.1.12.1.7.1.{$EQL_ID}</snmp_oid>
@@ -362,7 +544,7 @@
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units>B</units>
+                    <units>ops</units>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2452,7 +2634,7 @@
                 <screen>
                     <name>Custom - HW - Hardware Dell Equallogic  - Global</name>
                     <hsize>1</hsize>
-                    <vsize>3</vsize>
+                    <vsize>5</vsize>
                     <screen_items>
                         <screen_item>
                             <resourcetype>0</resourcetype>
@@ -2470,7 +2652,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>Equallogic -  Read/Write stats</name>
+                                <name>Equallogic -  RX/TX Data</name>
                                 <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
@@ -2492,7 +2674,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>Equallogic -  Storage Usage</name>
+                                <name>Equallogic -  Read/Write OPS</name>
                                 <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
@@ -2504,6 +2686,50 @@
                             <height>300</height>
                             <x>0</x>
                             <y>2</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Equallogic -  Latency</name>
+                                <host>Custom - HW - Dell Equallogic</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>900</width>
+                            <height>300</height>
+                            <x>0</x>
+                            <y>3</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Equallogic -  Storage Usage</name>
+                                <host>Custom - HW - Dell Equallogic</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>900</width>
+                            <height>300</height>
+                            <x>0</x>
+                            <y>4</y>
                             <colspan>1</colspan>
                             <rowspan>1</rowspan>
                             <elements>0</elements>
@@ -2774,7 +3000,51 @@ expanding 	(7)</description>
     </triggers>
     <graphs>
         <graph>
-            <name>Equallogic -  Read/Write stats</name>
+            <name>Equallogic -  Latency</name>
+            <width>900</width>
+            <height>300</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>2774A4</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>4</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Custom - HW - Dell Equallogic</host>
+                        <key>eqlMemberReadAvgLatency</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>A54F10</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>4</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Custom - HW - Dell Equallogic</host>
+                        <key>eqlMemberWriteAvgLatency</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Equallogic -  Read/Write OPS</name>
             <width>900</width>
             <height>300</height>
             <yaxismin>0.0000</yaxismin>
@@ -2813,6 +3083,50 @@ expanding 	(7)</description>
                     <item>
                         <host>Custom - HW - Dell Equallogic</host>
                         <key>eqlMemberWriteOpCount</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Equallogic -  RX/TX Data</name>
+            <width>900</width>
+            <height>300</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>1</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>00AA00</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>4</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Custom - HW - Dell Equallogic</host>
+                        <key>eqlMemberTxData</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>BB0000</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>4</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Custom - HW - Dell Equallogic</host>
+                        <key>eqlMemberRxData</key>
                     </item>
                 </graph_item>
             </graph_items>
