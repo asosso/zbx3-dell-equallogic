@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2017-12-29T06:00:36Z</date>
+    <date>2018-01-04T20:06:12Z</date>
     <groups>
         <group>
             <name>Template Dell</name>
@@ -50,7 +50,7 @@
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <snmp_oid>.1.3.6.1.4.1.12740.2.1.5.1.1.1.{$EQL_ID}</snmp_oid>
                     <key>eqlMemberHealthStatus</key>
-                    <delay>30</delay>
+                    <delay>60</delay>
                     <history>7d</history>
                     <trends>365d</trends>
                     <status>0</status>
@@ -82,6 +82,47 @@
                     <valuemap>
                         <name>eqlMemberHealthStatus</name>
                     </valuemap>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>Raid Rebuild Percentage</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.12740.2.1.13.1.2.1.{$EQL_ID}</snmp_oid>
+                    <key>eqlMemberRaidPercentage</key>
+                    <delay>300</delay>
+                    <history>14d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
                     <logtimefmt/>
                     <preprocessing/>
                     <jmx_endpoint/>
@@ -214,6 +255,47 @@
                             <params/>
                         </step>
                     </preprocessing>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>OPs Write Percentage</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>eqlMemberReadWriteRatio</key>
+                    <delay>120</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>%</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params>100*last(&quot;eqlMemberWriteOpCount&quot;)/(last(&quot;eqlMemberReadOpCount&quot;)+last(&quot;eqlMemberWriteOpCount&quot;))</params>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
                     <jmx_endpoint/>
                     <master_item/>
                 </item>
@@ -1290,7 +1372,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.12740.3.1.2.1.2.1.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
                             <key>eqlDiskStatusBytesRead.[{#SNMPINDEX}]</key>
-                            <delay>60</delay>
+                            <delay>90</delay>
                             <history>7d</history>
                             <trends>365d</trends>
                             <status>0</status>
@@ -1337,7 +1419,7 @@
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.12740.3.1.2.1.3.1.{$EQL_ID}.{#SNMPINDEX}</snmp_oid>
                             <key>eqlDiskStatusBytesWritten.[{#SNMPINDEX}]</key>
-                            <delay>60</delay>
+                            <delay>90</delay>
                             <history>7d</history>
                             <trends>365d</trends>
                             <status>0</status>
@@ -2634,7 +2716,7 @@
                 <screen>
                     <name>Custom - HW - Hardware Dell Equallogic  - Global</name>
                     <hsize>1</hsize>
-                    <vsize>5</vsize>
+                    <vsize>7</vsize>
                     <screen_items>
                         <screen_item>
                             <resourcetype>0</resourcetype>
@@ -2674,7 +2756,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>Equallogic -  Read/Write OPS</name>
+                                <name>Equallogic - Read/Write OPS Percentage</name>
                                 <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
@@ -2696,7 +2778,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>Equallogic -  Latency</name>
+                                <name>Equallogic -  Read/Write OPS</name>
                                 <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
@@ -2718,7 +2800,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>Equallogic -  Storage Usage</name>
+                                <name>Equallogic -  Latency</name>
                                 <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
@@ -2740,7 +2822,51 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
+                                <name>Equallogic -  Storage Usage</name>
+                                <host>Custom - HW - Dell Equallogic</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>900</width>
+                            <height>300</height>
+                            <x>0</x>
+                            <y>5</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
                                 <name>Equallogic -  Storage Usage Overall</name>
+                                <host>Custom - HW - Dell Equallogic</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>1</resourcetype>
+                            <width>900</width>
+                            <height>300</height>
+                            <x>0</x>
+                            <y>6</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <key>eqlMemberRaidPercentage</key>
                                 <host>Custom - HW - Dell Equallogic</host>
                             </resource>
                             <max_columns>3</max_columns>
@@ -2976,6 +3102,22 @@
             <tags/>
         </trigger>
         <trigger>
+            <expression>{Custom - HW - Dell Equallogic:eqlMemberRaidPercentage.last()}&lt;100</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Raid Rebuild in progress - {ITEM.VALUE1}%</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
             <expression>{Custom - HW - Dell Equallogic:eqlMemberRaidStatus.last()}&lt;&gt;1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
@@ -3083,6 +3225,38 @@ expanding 	(7)</description>
                     <item>
                         <host>Custom - HW - Dell Equallogic</host>
                         <key>eqlMemberWriteOpCount</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Equallogic - Read/Write OPS Percentage</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>1A7C11</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>4</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Custom - HW - Dell Equallogic</host>
+                        <key>eqlMemberReadWriteRatio</key>
                     </item>
                 </graph_item>
             </graph_items>
