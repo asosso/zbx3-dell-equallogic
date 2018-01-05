@@ -1,4 +1,4 @@
-Zabbix 3.2 Dell Equallogic
+Zabbix 3.4 Dell Equallogic
 ==========================
 
 This template (ZBX3-DELL-EQUALLOGIC) uses the Equallogic-MIB to discover and manage Equallogic Storage Arrays in Zabbix 3.2.
@@ -45,14 +45,16 @@ You will get something like this:
 
 ```
 SNMPv2-SMI::enterprises.12740.2.1.1.1.9.1.1234567890 = STRING: "Foo"
-
+                                          ----------            -----------
+                                          {$EQL_ID}             {$EQL_NAME}
 ```
+If you get multiple results, i.e. if you extended your storage by additional units, you can create multiple
+hosts for any discovered subsystem with the same snmp hostname.
 
-Now create a macro on the Host
-
+Now create/overload a macro on the Host:
 ```
 {$EQL_ID} -> 1234567890
-{$EQL_NAME} -> foo
+{$EQL_NAME} -> Foo
 {$SNMP_COMMUNITY} -> public
 ```
 
